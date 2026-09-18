@@ -1,0 +1,51 @@
+{
+  "name": "Organize Seminar",
+  "children": [
+    {
+      "name": "Requirement Analysis",
+      "task_id": "T1"
+    },
+    {
+      "name": "Plan Venue",
+      "task_id": "T2",
+      "children": [
+        {
+          "name": "Search Venue",
+          "operation": "search"
+        },
+        {
+          "name": "Check Capacity",
+          "operation": "capacity"
+        },
+        {
+          "name": "Check Availability",
+          "operation": "availability"
+        },
+        {
+          "name": "Check Budget",
+          "operation": "budget"
+        },
+        {
+          "name": "Confirm Venue",
+          "operation": "confirm"
+        }
+      ]
+    },
+    {
+      "name": "Plan Agenda",
+      "task_id": "T3"
+    },
+    {
+      "name": "Plan Speakers",
+      "task_id": "T4"
+    },
+    {
+      "name": "Prepare Invitation",
+      "task_id": "T5"
+    },
+    {
+      "name": "Integrate Final Plan",
+      "task_id": "T6"
+    }
+  ]
+}

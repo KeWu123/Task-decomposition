@@ -1,0 +1,505 @@
+{
+  "config": {
+    "failure": "replan",
+    "mode": "mock",
+    "granularity": "fine",
+    "date": "2026-11-20",
+    "attendees": 50,
+    "total_budget": 8000,
+    "venue_budget": 5000,
+    "speaker_cost": 1500,
+    "catering_cost": 1000,
+    "max_attempts": 3
+  },
+  "completed": true,
+  "tasks": [
+    {
+      "task_id": "T1",
+      "name": "Requirement Analysis",
+      "goal": "Validate fixed date, headcount and cost allocations",
+      "input": {
+        "date": "2026-11-20",
+        "attendees": 50,
+        "upstream": [],
+        "display_description": "Validate fixed date, headcount and cost allocations"
+      },
+      "dependencies": [],
+      "success_criteria": "Valid date and allocated costs <= total budget",
+      "recovery_policy": "stop",
+      "assigned_executor": "coordinator",
+      "output": {
+        "date": "2026-11-20",
+        "attendees": 50,
+        "total_budget": 8000,
+        "venue_budget": 5000,
+        "topic": "AI Agent Seminar"
+      },
+      "status": "SUCCESS",
+      "attempts": 1,
+      "history": [
+        {
+          "from": "PENDING",
+          "to": "READY",
+          "attempt": 0,
+          "reason": "all dependencies SUCCESS"
+        },
+        {
+          "from": "READY",
+          "to": "RUNNING",
+          "attempt": 1,
+          "reason": "Attempt 1"
+        },
+        {
+          "from": "RUNNING",
+          "to": "SUCCESS",
+          "attempt": 1,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "task_id": "T2",
+      "name": "Venue Planning",
+      "goal": "Find and book a suitable venue",
+      "input": {
+        "date": "2026-11-20",
+        "attendees": 50,
+        "upstream": [
+          "T1"
+        ],
+        "candidate": "Venue B",
+        "check_budget": true,
+        "venue_budget": 5000,
+        "primitives": [
+          "search",
+          "capacity",
+          "availability",
+          "budget",
+          "confirm"
+        ],
+        "display_description": "Find and book a suitable venue"
+      },
+      "dependencies": [
+        "T1"
+      ],
+      "success_criteria": "Capacity, availability, date and budget all valid",
+      "recovery_policy": "retry / rollback / replan / reflexion",
+      "assigned_executor": "venue",
+      "output": {
+        "venue": {
+          "name": "Venue B",
+          "capacity": 55,
+          "price": 4800,
+          "available": true
+        },
+        "booking_id": "BK-001"
+      },
+      "status": "SUCCESS",
+      "attempts": 2,
+      "history": [
+        {
+          "from": "PENDING",
+          "to": "BLOCKED",
+          "attempt": 0,
+          "reason": "waiting for dependencies"
+        },
+        {
+          "from": "BLOCKED",
+          "to": "READY",
+          "attempt": 0,
+          "reason": "all dependencies SUCCESS"
+        },
+        {
+          "from": "READY",
+          "to": "RUNNING",
+          "attempt": 1,
+          "reason": "Attempt 1"
+        },
+        {
+          "from": "RUNNING",
+          "to": "FAILED",
+          "attempt": 1,
+          "reason": "Venue A unavailable"
+        },
+        {
+          "from": "FAILED",
+          "to": "BLOCKED",
+          "attempt": 1,
+          "reason": "recovery scheduled"
+        },
+        {
+          "from": "BLOCKED",
+          "to": "READY",
+          "attempt": 1,
+          "reason": "all dependencies SUCCESS"
+        },
+        {
+          "from": "READY",
+          "to": "RUNNING",
+          "attempt": 2,
+          "reason": "Attempt 2"
+        },
+        {
+          "from": "RUNNING",
+          "to": "SUCCESS",
+          "attempt": 2,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "task_id": "T3",
+      "name": "Agenda Design",
+      "goal": "Design a one-day seminar",
+      "input": {
+        "date": "2026-11-20",
+        "attendees": 50,
+        "upstream": [
+          "T1"
+        ],
+        "display_description": "Design a one-day seminar"
+      },
+      "dependencies": [
+        "T1"
+      ],
+      "success_criteria": "Non-overlapping sessions from 09:00 to 17:00",
+      "recovery_policy": "stop",
+      "assigned_executor": "agenda",
+      "output": {
+        "sessions": [
+          {
+            "start": "09:00",
+            "end": "10:30",
+            "topic": "Agent Foundations"
+          },
+          {
+            "start": "10:30",
+            "end": "12:00",
+            "topic": "Task Decomposition and Planning"
+          },
+          {
+            "start": "12:00",
+            "end": "13:00",
+            "topic": "Lunch"
+          },
+          {
+            "start": "13:00",
+            "end": "15:00",
+            "topic": "Multi-Agent Workshop"
+          },
+          {
+            "start": "15:00",
+            "end": "17:00",
+            "topic": "Failure Recovery Lab"
+          }
+        ]
+      },
+      "status": "SUCCESS",
+      "attempts": 1,
+      "history": [
+        {
+          "from": "PENDING",
+          "to": "BLOCKED",
+          "attempt": 0,
+          "reason": "waiting for dependencies"
+        },
+        {
+          "from": "BLOCKED",
+          "to": "READY",
+          "attempt": 0,
+          "reason": "all dependencies SUCCESS"
+        },
+        {
+          "from": "READY",
+          "to": "RUNNING",
+          "attempt": 1,
+          "reason": "Attempt 1"
+        },
+        {
+          "from": "RUNNING",
+          "to": "SUCCESS",
+          "attempt": 1,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "task_id": "T4",
+      "name": "Speaker Planning",
+      "goal": "Assign mock speakers to required topics",
+      "input": {
+        "date": "2026-11-20",
+        "attendees": 50,
+        "upstream": [
+          "T1"
+        ],
+        "display_description": "Assign mock speakers to required topics"
+      },
+      "dependencies": [
+        "T1"
+      ],
+      "success_criteria": "All topics covered within speaker allocation",
+      "recovery_policy": "stop",
+      "assigned_executor": "speaker",
+      "output": {
+        "cost": 1500,
+        "speakers": [
+          {
+            "name": "Dr. Lin (mock)",
+            "topics": [
+              "Agent Foundations",
+              "Task Decomposition and Planning"
+            ]
+          },
+          {
+            "name": "Dr. Chen (mock)",
+            "topics": [
+              "Multi-Agent Workshop",
+              "Failure Recovery Lab"
+            ]
+          }
+        ]
+      },
+      "status": "SUCCESS",
+      "attempts": 1,
+      "history": [
+        {
+          "from": "PENDING",
+          "to": "BLOCKED",
+          "attempt": 0,
+          "reason": "waiting for dependencies"
+        },
+        {
+          "from": "BLOCKED",
+          "to": "READY",
+          "attempt": 0,
+          "reason": "all dependencies SUCCESS"
+        },
+        {
+          "from": "READY",
+          "to": "RUNNING",
+          "attempt": 1,
+          "reason": "Attempt 1"
+        },
+        {
+          "from": "RUNNING",
+          "to": "SUCCESS",
+          "attempt": 1,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "task_id": "T5",
+      "name": "Invitation Preparation",
+      "goal": "Prepare an accurate invitation draft",
+      "input": {
+        "date": "2026-11-20",
+        "attendees": 50,
+        "upstream": [
+          "T2",
+          "T3",
+          "T4"
+        ],
+        "display_description": "Prepare an accurate invitation draft"
+      },
+      "dependencies": [
+        "T2",
+        "T3",
+        "T4"
+      ],
+      "success_criteria": "Uses successful venue, agenda and speakers",
+      "recovery_policy": "stop",
+      "assigned_executor": "invitation",
+      "output": {
+        "date": "2026-11-20",
+        "venue": "Venue B",
+        "status": "draft_only",
+        "text": "Join our AI Agent Seminar on 2026-11-20, 09:00-17:00 at Venue B. For 50 students. Speakers: Dr. Lin (mock), Dr. Chen (mock). Agenda: Agent Foundations; Task Decomposition and Planning; Lunch; Multi-Agent Workshop; Failure Recovery Lab"
+      },
+      "status": "SUCCESS",
+      "attempts": 1,
+      "history": [
+        {
+          "from": "PENDING",
+          "to": "BLOCKED",
+          "attempt": 0,
+          "reason": "waiting for dependencies"
+        },
+        {
+          "from": "BLOCKED",
+          "to": "READY",
+          "attempt": 0,
+          "reason": "all dependencies SUCCESS"
+        },
+        {
+          "from": "READY",
+          "to": "RUNNING",
+          "attempt": 1,
+          "reason": "Attempt 1"
+        },
+        {
+          "from": "RUNNING",
+          "to": "SUCCESS",
+          "attempt": 1,
+          "reason": ""
+        }
+      ]
+    },
+    {
+      "task_id": "T6",
+      "name": "Final Plan Integration",
+      "goal": "Integrate and validate the final event plan",
+      "input": {
+        "date": "2026-11-20",
+        "attendees": 50,
+        "upstream": [
+          "T5"
+        ],
+        "display_description": "Integrate and validate the final event plan"
+      },
+      "dependencies": [
+        "T5"
+      ],
+      "success_criteria": "All upstream tasks successful; one valid booking; total within budget",
+      "recovery_policy": "stop",
+      "assigned_executor": "coordinator",
+      "output": {
+        "title": "AI Agent Seminar",
+        "date": "2026-11-20",
+        "attendees": 50,
+        "venue": {
+          "name": "Venue B",
+          "capacity": 55,
+          "price": 4800,
+          "available": true
+        },
+        "booking": {
+          "booking_id": "BK-001",
+          "venue": "Venue B",
+          "date": "2026-11-20",
+          "capacity": 55,
+          "price": 4800,
+          "status": "active"
+        },
+        "agenda": [
+          {
+            "start": "09:00",
+            "end": "10:30",
+            "topic": "Agent Foundations"
+          },
+          {
+            "start": "10:30",
+            "end": "12:00",
+            "topic": "Task Decomposition and Planning"
+          },
+          {
+            "start": "12:00",
+            "end": "13:00",
+            "topic": "Lunch"
+          },
+          {
+            "start": "13:00",
+            "end": "15:00",
+            "topic": "Multi-Agent Workshop"
+          },
+          {
+            "start": "15:00",
+            "end": "17:00",
+            "topic": "Failure Recovery Lab"
+          }
+        ],
+        "speakers": [
+          {
+            "name": "Dr. Lin (mock)",
+            "topics": [
+              "Agent Foundations",
+              "Task Decomposition and Planning"
+            ]
+          },
+          {
+            "name": "Dr. Chen (mock)",
+            "topics": [
+              "Multi-Agent Workshop",
+              "Failure Recovery Lab"
+            ]
+          }
+        ],
+        "invitation": {
+          "date": "2026-11-20",
+          "venue": "Venue B",
+          "status": "draft_only",
+          "text": "Join our AI Agent Seminar on 2026-11-20, 09:00-17:00 at Venue B. For 50 students. Speakers: Dr. Lin (mock), Dr. Chen (mock). Agenda: Agent Foundations; Task Decomposition and Planning; Lunch; Multi-Agent Workshop; Failure Recovery Lab"
+        },
+        "budget": {
+          "limit": 8000,
+          "venue": 4800,
+          "speakers": 1500,
+          "catering": 1000,
+          "total": 7300,
+          "remaining": 700
+        },
+        "mock_mode": true,
+        "planner_mode": "mock"
+      },
+      "status": "SUCCESS",
+      "attempts": 1,
+      "history": [
+        {
+          "from": "PENDING",
+          "to": "BLOCKED",
+          "attempt": 0,
+          "reason": "waiting for dependencies"
+        },
+        {
+          "from": "BLOCKED",
+          "to": "READY",
+          "attempt": 0,
+          "reason": "all dependencies SUCCESS"
+        },
+        {
+          "from": "READY",
+          "to": "RUNNING",
+          "attempt": 1,
+          "reason": "Attempt 1"
+        },
+        {
+          "from": "RUNNING",
+          "to": "SUCCESS",
+          "attempt": 1,
+          "reason": ""
+        }
+      ]
+    }
+  ],
+  "bookings": {
+    "BK-001": {
+      "booking_id": "BK-001",
+      "venue": "Venue B",
+      "date": "2026-11-20",
+      "capacity": 55,
+      "price": 4800,
+      "status": "active"
+    }
+  },
+  "booking": {
+    "booking_id": "BK-001",
+    "venue": "Venue B",
+    "date": "2026-11-20",
+    "capacity": 55,
+    "price": 4800,
+    "status": "active"
+  },
+  "memory": [],
+  "plan_updates": [
+    {
+      "task_id": "T2",
+      "from": "Venue A",
+      "to": "Venue B",
+      "check_budget": true
+    }
+  ],
+  "planner_mode": "mock",
+  "planner_note": "Deterministic local descriptions; no network calls",
+  "scheduler_steps": 5
+}

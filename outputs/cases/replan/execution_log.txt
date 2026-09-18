@@ -1,0 +1,131 @@
+
+================================================================
+TASK DECOMPOSITION & PLANNING DEMO
+================================================================
+sequence=1 | timestamp=2026-09-16T17:16:51.139+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=USER GOAL | failure_type=- | recovery_action=- | message=Organize a one-day AI Agent Seminar for 50 students on 2026-11-20, total budget CNY 8000, venue budget CNY 5000.
+sequence=2 | timestamp=2026-09-16T17:16:51.139+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=CONFIG | failure_type=- | recovery_action=- | message=date=2026-11-20; total budget=CNY 8000; venue cap=CNY 5000; failure=replan; mode=mock; venues=MOCK
+sequence=3 | timestamp=2026-09-16T17:16:51.139+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=SCENARIO | failure_type=- | recovery_action=- | message=Base: A unavailable / CNY 4500; B available / CNY 4800; C too small. Using base availability.
+
+================================================================
+1. PLANNING
+================================================================
+sequence=4 | timestamp=2026-09-16T17:16:51.139+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=PLANNER MODE | failure_type=- | recovery_action=- | message=requested=mock; effective=mock; Deterministic local descriptions; no network calls
+sequence=5 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=PLANNER | failure_type=- | recovery_action=- | message=Generated 6 structured tasks
+sequence=6 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id=T1 | task_name=Requirement Analysis | old_status=- | new_status=- | executor=coordinator | event=TASK | failure_type=- | recovery_action=- | message=Requirement Analysis | executor=coordinator
+sequence=7 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id=T1 | task_name=Requirement Analysis | old_status=- | new_status=- | executor=coordinator | event=DESCRIPTION | failure_type=- | recovery_action=- | message=Validate fixed date, headcount and cost allocations
+sequence=8 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=TASK | failure_type=- | recovery_action=- | message=Venue Planning | executor=venue
+sequence=9 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=DESCRIPTION | failure_type=- | recovery_action=- | message=Find and book a suitable venue
+sequence=10 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id=T3 | task_name=Agenda Design | old_status=- | new_status=- | executor=agenda | event=TASK | failure_type=- | recovery_action=- | message=Agenda Design | executor=agenda
+sequence=11 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id=T3 | task_name=Agenda Design | old_status=- | new_status=- | executor=agenda | event=DESCRIPTION | failure_type=- | recovery_action=- | message=Design a one-day seminar
+sequence=12 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id=T4 | task_name=Speaker Planning | old_status=- | new_status=- | executor=speaker | event=TASK | failure_type=- | recovery_action=- | message=Speaker Planning | executor=speaker
+sequence=13 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id=T4 | task_name=Speaker Planning | old_status=- | new_status=- | executor=speaker | event=DESCRIPTION | failure_type=- | recovery_action=- | message=Assign mock speakers to required topics
+sequence=14 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id=T5 | task_name=Invitation Preparation | old_status=- | new_status=- | executor=invitation | event=TASK | failure_type=- | recovery_action=- | message=Invitation Preparation | executor=invitation
+sequence=15 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id=T5 | task_name=Invitation Preparation | old_status=- | new_status=- | executor=invitation | event=DESCRIPTION | failure_type=- | recovery_action=- | message=Prepare an accurate invitation draft
+sequence=16 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id=T6 | task_name=Final Plan Integration | old_status=- | new_status=- | executor=coordinator | event=TASK | failure_type=- | recovery_action=- | message=Final Plan Integration | executor=coordinator
+sequence=17 | timestamp=2026-09-16T17:16:51.140+00:00 | task_id=T6 | task_name=Final Plan Integration | old_status=- | new_status=- | executor=coordinator | event=DESCRIPTION | failure_type=- | recovery_action=- | message=Integrate and validate the final event plan
+sequence=18 | timestamp=2026-09-16T17:16:51.141+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=HTN | failure_type=- | recovery_action=- | message=Organize Seminar -> Plan Venue -> search -> capacity -> availability -> budget -> confirm
+
+================================================================
+1b. TASK GRANULARITY LAB
+================================================================
+sequence=19 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=GRANULARITY | failure_type=- | recovery_action=- | message=Isolated venue lab; main seminar DAG remains six tasks
+sequence=20 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=SELECTED | failure_type=- | recovery_action=- | message=normal: Search Venue -> Validate Constraints -> Confirm Venue
+sequence=21 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=METRICS | failure_type=- | recovery_action=- | message=Level   | Number of Tasks | Scheduler Steps | Execution Events | Handoffs
+sequence=22 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=METRICS | failure_type=- | recovery_action=- | message=coarse  |               1 |               1 |               21 |        0
+sequence=23 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=METRICS | failure_type=- | recovery_action=- | message=normal  |               3 |               3 |               31 |        2
+sequence=24 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=METRICS | failure_type=- | recovery_action=- | message=fine    |               8 |               8 |               56 |        7
+sequence=25 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=TRADE-OFF | failure_type=- | recovery_action=- | message=Search, validate, confirm: independently verifiable outputs and clear dependencies.
+sequence=26 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=MEASUREMENT | failure_type=- | recovery_action=- | message=All levels executed the same 8 primitive actions; counts are measured, not latency benchmarks.
+
+================================================================
+2. TASK GRAPH
+================================================================
+sequence=27 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=DAG | failure_type=- | recovery_action=- | message=T1 Requirement Analysis <- (root)
+sequence=28 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=DAG | failure_type=- | recovery_action=- | message=T2 Venue Planning <- T1
+sequence=29 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=DAG | failure_type=- | recovery_action=- | message=T3 Agenda Design <- T1
+sequence=30 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=DAG | failure_type=- | recovery_action=- | message=T4 Speaker Planning <- T1
+sequence=31 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=DAG | failure_type=- | recovery_action=- | message=T5 Invitation Preparation <- T2, T3, T4
+sequence=32 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=DAG | failure_type=- | recovery_action=- | message=T6 Final Plan Integration <- T5
+
+================================================================
+3. EXECUTION
+================================================================
+sequence=33 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id=T1 | task_name=Requirement Analysis | old_status=PENDING | new_status=READY | executor=coordinator | event=STATUS | failure_type=- | recovery_action=- | message=PENDING -> READY (all dependencies SUCCESS)
+sequence=34 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id=T2 | task_name=Venue Planning | old_status=PENDING | new_status=BLOCKED | executor=venue | event=STATUS | failure_type=- | recovery_action=- | message=PENDING -> BLOCKED (waiting for dependencies)
+sequence=35 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id=T3 | task_name=Agenda Design | old_status=PENDING | new_status=BLOCKED | executor=agenda | event=STATUS | failure_type=- | recovery_action=- | message=PENDING -> BLOCKED (waiting for dependencies)
+sequence=36 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id=T4 | task_name=Speaker Planning | old_status=PENDING | new_status=BLOCKED | executor=speaker | event=STATUS | failure_type=- | recovery_action=- | message=PENDING -> BLOCKED (waiting for dependencies)
+sequence=37 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id=T5 | task_name=Invitation Preparation | old_status=PENDING | new_status=BLOCKED | executor=invitation | event=STATUS | failure_type=- | recovery_action=- | message=PENDING -> BLOCKED (waiting for dependencies)
+sequence=38 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id=T6 | task_name=Final Plan Integration | old_status=PENDING | new_status=BLOCKED | executor=coordinator | event=STATUS | failure_type=- | recovery_action=- | message=PENDING -> BLOCKED (waiting for dependencies)
+sequence=39 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=SCHEDULER | failure_type=- | recovery_action=- | message=Ready wave: T1
+sequence=40 | timestamp=2026-09-16T17:16:51.146+00:00 | task_id=T1 | task_name=Requirement Analysis | old_status=READY | new_status=RUNNING | executor=coordinator | event=STATUS | failure_type=- | recovery_action=- | message=READY -> RUNNING (Attempt 1)
+sequence=41 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T1 | task_name=Requirement Analysis | old_status=RUNNING | new_status=SUCCESS | executor=coordinator | event=STATUS | failure_type=- | recovery_action=- | message=RUNNING -> SUCCESS
+sequence=42 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=BLOCKED | new_status=READY | executor=venue | event=STATUS | failure_type=- | recovery_action=- | message=BLOCKED -> READY (all dependencies SUCCESS)
+sequence=43 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T3 | task_name=Agenda Design | old_status=BLOCKED | new_status=READY | executor=agenda | event=STATUS | failure_type=- | recovery_action=- | message=BLOCKED -> READY (all dependencies SUCCESS)
+sequence=44 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T4 | task_name=Speaker Planning | old_status=BLOCKED | new_status=READY | executor=speaker | event=STATUS | failure_type=- | recovery_action=- | message=BLOCKED -> READY (all dependencies SUCCESS)
+sequence=45 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=SCHEDULER | failure_type=- | recovery_action=- | message=Ready wave: T2, T3, T4 (concurrent asyncio tasks)
+sequence=46 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=READY | new_status=RUNNING | executor=venue | event=STATUS | failure_type=- | recovery_action=- | message=READY -> RUNNING (Attempt 1)
+sequence=47 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=REASON | failure_type=- | recovery_action=- | message=Check Venue A for 50 people; price limit=CNY 5000; budget filter=ON.
+sequence=48 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=ACT | failure_type=- | recovery_action=- | message=search
+sequence=49 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T3 | task_name=Agenda Design | old_status=READY | new_status=RUNNING | executor=agenda | event=STATUS | failure_type=- | recovery_action=- | message=READY -> RUNNING (Attempt 1)
+sequence=50 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T4 | task_name=Speaker Planning | old_status=READY | new_status=RUNNING | executor=speaker | event=STATUS | failure_type=- | recovery_action=- | message=READY -> RUNNING (Attempt 1)
+sequence=51 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=OBSERVE | failure_type=- | recovery_action=- | message=Venue A: capacity=60, price=4500, available=False
+sequence=52 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=ACT | failure_type=- | recovery_action=- | message=capacity
+sequence=53 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=OBSERVE | failure_type=- | recovery_action=- | message=capacity PASS: 60 >= 50
+sequence=54 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=ACT | failure_type=- | recovery_action=- | message=availability
+sequence=55 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=OBSERVE | failure_type=- | recovery_action=- | message=Venue A unavailable
+sequence=56 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=RUNNING | new_status=FAILED | executor=venue | event=STATUS | failure_type=- | recovery_action=- | message=RUNNING -> FAILED (Venue A unavailable)
+sequence=57 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T3 | task_name=Agenda Design | old_status=- | new_status=- | executor=agenda | event=OBSERVE | failure_type=- | recovery_action=- | message=One-day agenda ready: 09:00-17:00
+sequence=58 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T3 | task_name=Agenda Design | old_status=RUNNING | new_status=SUCCESS | executor=agenda | event=STATUS | failure_type=- | recovery_action=- | message=RUNNING -> SUCCESS
+sequence=59 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T4 | task_name=Speaker Planning | old_status=- | new_status=- | executor=speaker | event=OBSERVE | failure_type=- | recovery_action=- | message=Two fictional speakers confirmed in local mock data
+sequence=60 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T4 | task_name=Speaker Planning | old_status=RUNNING | new_status=SUCCESS | executor=speaker | event=STATUS | failure_type=- | recovery_action=- | message=RUNNING -> SUCCESS
+sequence=61 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=FAILURE DETECTED | failure_type=INVALID_PLAN | recovery_action=- | message=Type: INVALID_PLAN; Venue A unavailable
+sequence=62 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=RECOVERY DECISION | failure_type=INVALID_PLAN | recovery_action=REPLAN | message=REPLAN
+sequence=63 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=PLAN UPDATE | failure_type=- | recovery_action=- | message=Venue A -> Venue B; recheck capacity, availability and budget
+sequence=64 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T5 | task_name=Invitation Preparation | old_status=- | new_status=- | executor=invitation | event=DEPENDENCY | failure_type=- | recovery_action=- | message=remains BLOCKED while venue is recovered
+sequence=65 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T6 | task_name=Final Plan Integration | old_status=- | new_status=- | executor=coordinator | event=DEPENDENCY | failure_type=- | recovery_action=- | message=remains BLOCKED while venue is recovered
+sequence=66 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=FAILED | new_status=BLOCKED | executor=venue | event=STATUS | failure_type=- | recovery_action=- | message=FAILED -> BLOCKED (recovery scheduled)
+sequence=67 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=BLOCKED | new_status=READY | executor=venue | event=STATUS | failure_type=- | recovery_action=- | message=BLOCKED -> READY (all dependencies SUCCESS)
+sequence=68 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=SCHEDULER | failure_type=- | recovery_action=- | message=Ready wave: T2
+sequence=69 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=READY | new_status=RUNNING | executor=venue | event=STATUS | failure_type=- | recovery_action=- | message=READY -> RUNNING (Attempt 2)
+sequence=70 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=REASON | failure_type=- | recovery_action=- | message=Check Venue B for 50 people; price limit=CNY 5000; budget filter=ON.
+sequence=71 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=ACT | failure_type=- | recovery_action=- | message=search
+sequence=72 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=OBSERVE | failure_type=- | recovery_action=- | message=Venue B: capacity=55, price=4800, available=True
+sequence=73 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=ACT | failure_type=- | recovery_action=- | message=capacity
+sequence=74 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=OBSERVE | failure_type=- | recovery_action=- | message=capacity PASS: 55 >= 50
+sequence=75 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=ACT | failure_type=- | recovery_action=- | message=availability
+sequence=76 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=OBSERVE | failure_type=- | recovery_action=- | message=availability PASS
+sequence=77 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=ACT | failure_type=- | recovery_action=- | message=budget
+sequence=78 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=OBSERVE | failure_type=- | recovery_action=- | message=budget PASS: 4800 <= 5000
+sequence=79 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=ACT | failure_type=- | recovery_action=- | message=confirm
+sequence=80 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=BOOKING | failure_type=- | recovery_action=- | message=Created BK-001 for Venue B
+sequence=81 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=OBSERVE | failure_type=- | recovery_action=- | message=booking confirmation PASS
+sequence=82 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=- | new_status=- | executor=venue | event=REASON | failure_type=- | recovery_action=- | message=All constraints verified; return the confirmed venue.
+sequence=83 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T2 | task_name=Venue Planning | old_status=RUNNING | new_status=SUCCESS | executor=venue | event=STATUS | failure_type=- | recovery_action=- | message=RUNNING -> SUCCESS
+sequence=84 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T5 | task_name=Invitation Preparation | old_status=BLOCKED | new_status=READY | executor=invitation | event=STATUS | failure_type=- | recovery_action=- | message=BLOCKED -> READY (all dependencies SUCCESS)
+sequence=85 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=SCHEDULER | failure_type=- | recovery_action=- | message=Ready wave: T5
+sequence=86 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T5 | task_name=Invitation Preparation | old_status=READY | new_status=RUNNING | executor=invitation | event=STATUS | failure_type=- | recovery_action=- | message=READY -> RUNNING (Attempt 1)
+sequence=87 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T5 | task_name=Invitation Preparation | old_status=- | new_status=- | executor=invitation | event=INVITATION | failure_type=- | recovery_action=- | message=Prepared local draft using confirmed Venue B
+sequence=88 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T5 | task_name=Invitation Preparation | old_status=RUNNING | new_status=SUCCESS | executor=invitation | event=STATUS | failure_type=- | recovery_action=- | message=RUNNING -> SUCCESS
+sequence=89 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T6 | task_name=Final Plan Integration | old_status=BLOCKED | new_status=READY | executor=coordinator | event=STATUS | failure_type=- | recovery_action=- | message=BLOCKED -> READY (all dependencies SUCCESS)
+sequence=90 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=SCHEDULER | failure_type=- | recovery_action=- | message=Ready wave: T6
+sequence=91 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T6 | task_name=Final Plan Integration | old_status=READY | new_status=RUNNING | executor=coordinator | event=STATUS | failure_type=- | recovery_action=- | message=READY -> RUNNING (Attempt 1)
+sequence=92 | timestamp=2026-09-16T17:16:51.147+00:00 | task_id=T6 | task_name=Final Plan Integration | old_status=RUNNING | new_status=SUCCESS | executor=coordinator | event=STATUS | failure_type=- | recovery_action=- | message=RUNNING -> SUCCESS
+
+================================================================
+4. FINAL RESULT
+================================================================
+sequence=93 | timestamp=2026-09-16T17:16:51.148+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=RESULT | failure_type=- | recovery_action=- | message=Seminar Plan Completed
+sequence=94 | timestamp=2026-09-16T17:16:51.148+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=VENUE | failure_type=- | recovery_action=- | message=Venue B | 2026-11-20 | 50 students
+sequence=95 | timestamp=2026-09-16T17:16:51.148+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=AGENDA | failure_type=- | recovery_action=- | message=09:00-10:30 Agent Foundations
+sequence=96 | timestamp=2026-09-16T17:16:51.148+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=AGENDA | failure_type=- | recovery_action=- | message=10:30-12:00 Task Decomposition and Planning
+sequence=97 | timestamp=2026-09-16T17:16:51.148+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=AGENDA | failure_type=- | recovery_action=- | message=12:00-13:00 Lunch
+sequence=98 | timestamp=2026-09-16T17:16:51.148+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=AGENDA | failure_type=- | recovery_action=- | message=13:00-15:00 Multi-Agent Workshop
+sequence=99 | timestamp=2026-09-16T17:16:51.148+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=AGENDA | failure_type=- | recovery_action=- | message=15:00-17:00 Failure Recovery Lab
+sequence=100 | timestamp=2026-09-16T17:16:51.148+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=SPEAKERS | failure_type=- | recovery_action=- | message=Dr. Lin (mock), Dr. Chen (mock)
+sequence=101 | timestamp=2026-09-16T17:16:51.148+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=BUDGET | failure_type=- | recovery_action=- | message=CNY 7300 / 8000
+sequence=102 | timestamp=2026-09-16T17:16:51.148+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=INVITATION | failure_type=- | recovery_action=- | message=Draft prepared using the confirmed venue (local only)
+sequence=103 | timestamp=2026-09-16T17:16:51.148+00:00 | task_id= | task_name=- | old_status=- | new_status=- | executor=- | event=EXECUTION METRICS | failure_type=- | recovery_action=- | message=6 main tasks; scheduler steps=5; task attempts=7
+
+================================================================
+DEMO COMPLETED
+================================================================

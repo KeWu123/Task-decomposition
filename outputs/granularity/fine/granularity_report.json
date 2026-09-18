@@ -1,0 +1,2234 @@
+{
+  "selected": "fine",
+  "scope": "Isolated venue lab; main seminar DAG remains six tasks",
+  "comparison": {
+    "coarse": {
+      "number_of_tasks": 1,
+      "scheduler_steps": 1,
+      "execution_events": 21,
+      "dependency_handoffs": 0,
+      "primitive_actions": 8,
+      "task_names": [
+        "Handle Venue"
+      ],
+      "output": {
+        "venue": {
+          "name": "Venue B",
+          "capacity": 55,
+          "price": 4800,
+          "available": true
+        },
+        "booking_id": "BK-001",
+        "saved": true
+      },
+      "tasks": [
+        {
+          "task_id": "G1",
+          "name": "Handle Venue",
+          "goal": "Validate and book Venue B",
+          "input": {
+            "operations": [
+              "open_source",
+              "query",
+              "read_result",
+              "capacity",
+              "budget",
+              "availability",
+              "confirm",
+              "save_result"
+            ]
+          },
+          "dependencies": [],
+          "success_criteria": "Operations completed with validated output",
+          "recovery_policy": "stop",
+          "assigned_executor": "venue_step",
+          "output": {
+            "venue": {
+              "name": "Venue B",
+              "capacity": 55,
+              "price": 4800,
+              "available": true
+            },
+            "booking_id": "BK-001",
+            "saved": true
+          },
+          "status": "SUCCESS",
+          "attempts": 1,
+          "history": [
+            {
+              "from": "PENDING",
+              "to": "READY",
+              "attempt": 0,
+              "reason": "all dependencies SUCCESS"
+            },
+            {
+              "from": "READY",
+              "to": "RUNNING",
+              "attempt": 1,
+              "reason": "Attempt 1"
+            },
+            {
+              "from": "RUNNING",
+              "to": "SUCCESS",
+              "attempt": 1,
+              "reason": ""
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "timestamp": "2026-09-16T17:16:52.235+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": "PENDING",
+          "new_status": "READY",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "PENDING -> READY (all dependencies SUCCESS)"
+        },
+        {
+          "sequence": 2,
+          "timestamp": "2026-09-16T17:16:52.235+00:00",
+          "task_id": "",
+          "task_name": null,
+          "old_status": null,
+          "new_status": null,
+          "executor": null,
+          "event": "SCHEDULER",
+          "tag": "SCHEDULER",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Ready wave: G1"
+        },
+        {
+          "sequence": 3,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": "READY",
+          "new_status": "RUNNING",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "READY -> RUNNING (Attempt 1)"
+        },
+        {
+          "sequence": 4,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "open_source"
+        },
+        {
+          "sequence": 5,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "open_source complete"
+        },
+        {
+          "sequence": 6,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "query"
+        },
+        {
+          "sequence": 7,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "query complete"
+        },
+        {
+          "sequence": 8,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "read_result"
+        },
+        {
+          "sequence": 9,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "read_result complete"
+        },
+        {
+          "sequence": 10,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "capacity"
+        },
+        {
+          "sequence": 11,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "capacity complete"
+        },
+        {
+          "sequence": 12,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "budget"
+        },
+        {
+          "sequence": 13,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "budget complete"
+        },
+        {
+          "sequence": 14,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "availability"
+        },
+        {
+          "sequence": 15,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "availability complete"
+        },
+        {
+          "sequence": 16,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "confirm"
+        },
+        {
+          "sequence": 17,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "BOOKING",
+          "tag": "BOOKING",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Created BK-001 for Venue B"
+        },
+        {
+          "sequence": 18,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "confirm complete"
+        },
+        {
+          "sequence": 19,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "save_result"
+        },
+        {
+          "sequence": 20,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "save_result complete"
+        },
+        {
+          "sequence": 21,
+          "timestamp": "2026-09-16T17:16:52.236+00:00",
+          "task_id": "G1",
+          "task_name": "Handle Venue",
+          "old_status": "RUNNING",
+          "new_status": "SUCCESS",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "RUNNING -> SUCCESS"
+        }
+      ]
+    },
+    "normal": {
+      "number_of_tasks": 3,
+      "scheduler_steps": 3,
+      "execution_events": 31,
+      "dependency_handoffs": 2,
+      "primitive_actions": 8,
+      "task_names": [
+        "Search Venue",
+        "Validate Constraints",
+        "Confirm Venue"
+      ],
+      "output": {
+        "venue": {
+          "name": "Venue B",
+          "capacity": 55,
+          "price": 4800,
+          "available": true
+        },
+        "booking_id": "BK-001",
+        "saved": true
+      },
+      "tasks": [
+        {
+          "task_id": "G1",
+          "name": "Search Venue",
+          "goal": "Validate and book Venue B",
+          "input": {
+            "operations": [
+              "open_source",
+              "query",
+              "read_result"
+            ]
+          },
+          "dependencies": [],
+          "success_criteria": "Operations completed with validated output",
+          "recovery_policy": "stop",
+          "assigned_executor": "venue_step",
+          "output": {
+            "venue": {
+              "name": "Venue B",
+              "capacity": 55,
+              "price": 4800,
+              "available": true
+            }
+          },
+          "status": "SUCCESS",
+          "attempts": 1,
+          "history": [
+            {
+              "from": "PENDING",
+              "to": "READY",
+              "attempt": 0,
+              "reason": "all dependencies SUCCESS"
+            },
+            {
+              "from": "READY",
+              "to": "RUNNING",
+              "attempt": 1,
+              "reason": "Attempt 1"
+            },
+            {
+              "from": "RUNNING",
+              "to": "SUCCESS",
+              "attempt": 1,
+              "reason": ""
+            }
+          ]
+        },
+        {
+          "task_id": "G2",
+          "name": "Validate Constraints",
+          "goal": "Validate and book Venue B",
+          "input": {
+            "operations": [
+              "capacity",
+              "budget",
+              "availability"
+            ]
+          },
+          "dependencies": [
+            "G1"
+          ],
+          "success_criteria": "Operations completed with validated output",
+          "recovery_policy": "stop",
+          "assigned_executor": "venue_step",
+          "output": {
+            "venue": {
+              "name": "Venue B",
+              "capacity": 55,
+              "price": 4800,
+              "available": true
+            }
+          },
+          "status": "SUCCESS",
+          "attempts": 1,
+          "history": [
+            {
+              "from": "PENDING",
+              "to": "BLOCKED",
+              "attempt": 0,
+              "reason": "waiting for dependencies"
+            },
+            {
+              "from": "BLOCKED",
+              "to": "READY",
+              "attempt": 0,
+              "reason": "all dependencies SUCCESS"
+            },
+            {
+              "from": "READY",
+              "to": "RUNNING",
+              "attempt": 1,
+              "reason": "Attempt 1"
+            },
+            {
+              "from": "RUNNING",
+              "to": "SUCCESS",
+              "attempt": 1,
+              "reason": ""
+            }
+          ]
+        },
+        {
+          "task_id": "G3",
+          "name": "Confirm Venue",
+          "goal": "Validate and book Venue B",
+          "input": {
+            "operations": [
+              "confirm",
+              "save_result"
+            ]
+          },
+          "dependencies": [
+            "G2"
+          ],
+          "success_criteria": "Operations completed with validated output",
+          "recovery_policy": "stop",
+          "assigned_executor": "venue_step",
+          "output": {
+            "venue": {
+              "name": "Venue B",
+              "capacity": 55,
+              "price": 4800,
+              "available": true
+            },
+            "booking_id": "BK-001",
+            "saved": true
+          },
+          "status": "SUCCESS",
+          "attempts": 1,
+          "history": [
+            {
+              "from": "PENDING",
+              "to": "BLOCKED",
+              "attempt": 0,
+              "reason": "waiting for dependencies"
+            },
+            {
+              "from": "BLOCKED",
+              "to": "READY",
+              "attempt": 0,
+              "reason": "all dependencies SUCCESS"
+            },
+            {
+              "from": "READY",
+              "to": "RUNNING",
+              "attempt": 1,
+              "reason": "Attempt 1"
+            },
+            {
+              "from": "RUNNING",
+              "to": "SUCCESS",
+              "attempt": 1,
+              "reason": ""
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G1",
+          "task_name": "Search Venue",
+          "old_status": "PENDING",
+          "new_status": "READY",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "PENDING -> READY (all dependencies SUCCESS)"
+        },
+        {
+          "sequence": 2,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G2",
+          "task_name": "Validate Constraints",
+          "old_status": "PENDING",
+          "new_status": "BLOCKED",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "PENDING -> BLOCKED (waiting for dependencies)"
+        },
+        {
+          "sequence": 3,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G3",
+          "task_name": "Confirm Venue",
+          "old_status": "PENDING",
+          "new_status": "BLOCKED",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "PENDING -> BLOCKED (waiting for dependencies)"
+        },
+        {
+          "sequence": 4,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "",
+          "task_name": null,
+          "old_status": null,
+          "new_status": null,
+          "executor": null,
+          "event": "SCHEDULER",
+          "tag": "SCHEDULER",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Ready wave: G1"
+        },
+        {
+          "sequence": 5,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G1",
+          "task_name": "Search Venue",
+          "old_status": "READY",
+          "new_status": "RUNNING",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "READY -> RUNNING (Attempt 1)"
+        },
+        {
+          "sequence": 6,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G1",
+          "task_name": "Search Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "open_source"
+        },
+        {
+          "sequence": 7,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G1",
+          "task_name": "Search Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "open_source complete"
+        },
+        {
+          "sequence": 8,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G1",
+          "task_name": "Search Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "query"
+        },
+        {
+          "sequence": 9,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G1",
+          "task_name": "Search Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "query complete"
+        },
+        {
+          "sequence": 10,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G1",
+          "task_name": "Search Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "read_result"
+        },
+        {
+          "sequence": 11,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G1",
+          "task_name": "Search Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "read_result complete"
+        },
+        {
+          "sequence": 12,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G1",
+          "task_name": "Search Venue",
+          "old_status": "RUNNING",
+          "new_status": "SUCCESS",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "RUNNING -> SUCCESS"
+        },
+        {
+          "sequence": 13,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G2",
+          "task_name": "Validate Constraints",
+          "old_status": "BLOCKED",
+          "new_status": "READY",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "BLOCKED -> READY (all dependencies SUCCESS)"
+        },
+        {
+          "sequence": 14,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "",
+          "task_name": null,
+          "old_status": null,
+          "new_status": null,
+          "executor": null,
+          "event": "SCHEDULER",
+          "tag": "SCHEDULER",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Ready wave: G2"
+        },
+        {
+          "sequence": 15,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G2",
+          "task_name": "Validate Constraints",
+          "old_status": "READY",
+          "new_status": "RUNNING",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "READY -> RUNNING (Attempt 1)"
+        },
+        {
+          "sequence": 16,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G2",
+          "task_name": "Validate Constraints",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "capacity"
+        },
+        {
+          "sequence": 17,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G2",
+          "task_name": "Validate Constraints",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "capacity complete"
+        },
+        {
+          "sequence": 18,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G2",
+          "task_name": "Validate Constraints",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "budget"
+        },
+        {
+          "sequence": 19,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G2",
+          "task_name": "Validate Constraints",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "budget complete"
+        },
+        {
+          "sequence": 20,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G2",
+          "task_name": "Validate Constraints",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "availability"
+        },
+        {
+          "sequence": 21,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G2",
+          "task_name": "Validate Constraints",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "availability complete"
+        },
+        {
+          "sequence": 22,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G2",
+          "task_name": "Validate Constraints",
+          "old_status": "RUNNING",
+          "new_status": "SUCCESS",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "RUNNING -> SUCCESS"
+        },
+        {
+          "sequence": 23,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G3",
+          "task_name": "Confirm Venue",
+          "old_status": "BLOCKED",
+          "new_status": "READY",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "BLOCKED -> READY (all dependencies SUCCESS)"
+        },
+        {
+          "sequence": 24,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "",
+          "task_name": null,
+          "old_status": null,
+          "new_status": null,
+          "executor": null,
+          "event": "SCHEDULER",
+          "tag": "SCHEDULER",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Ready wave: G3"
+        },
+        {
+          "sequence": 25,
+          "timestamp": "2026-09-16T17:16:52.238+00:00",
+          "task_id": "G3",
+          "task_name": "Confirm Venue",
+          "old_status": "READY",
+          "new_status": "RUNNING",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "READY -> RUNNING (Attempt 1)"
+        },
+        {
+          "sequence": 26,
+          "timestamp": "2026-09-16T17:16:52.239+00:00",
+          "task_id": "G3",
+          "task_name": "Confirm Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "confirm"
+        },
+        {
+          "sequence": 27,
+          "timestamp": "2026-09-16T17:16:52.239+00:00",
+          "task_id": "G3",
+          "task_name": "Confirm Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "BOOKING",
+          "tag": "BOOKING",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Created BK-001 for Venue B"
+        },
+        {
+          "sequence": 28,
+          "timestamp": "2026-09-16T17:16:52.239+00:00",
+          "task_id": "G3",
+          "task_name": "Confirm Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "confirm complete"
+        },
+        {
+          "sequence": 29,
+          "timestamp": "2026-09-16T17:16:52.239+00:00",
+          "task_id": "G3",
+          "task_name": "Confirm Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "save_result"
+        },
+        {
+          "sequence": 30,
+          "timestamp": "2026-09-16T17:16:52.239+00:00",
+          "task_id": "G3",
+          "task_name": "Confirm Venue",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "save_result complete"
+        },
+        {
+          "sequence": 31,
+          "timestamp": "2026-09-16T17:16:52.239+00:00",
+          "task_id": "G3",
+          "task_name": "Confirm Venue",
+          "old_status": "RUNNING",
+          "new_status": "SUCCESS",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "RUNNING -> SUCCESS"
+        }
+      ]
+    },
+    "fine": {
+      "number_of_tasks": 8,
+      "scheduler_steps": 8,
+      "execution_events": 56,
+      "dependency_handoffs": 7,
+      "primitive_actions": 8,
+      "task_names": [
+        "Open Source",
+        "Query",
+        "Read Result",
+        "Capacity",
+        "Budget",
+        "Availability",
+        "Confirm",
+        "Save Result"
+      ],
+      "output": {
+        "venue": {
+          "name": "Venue B",
+          "capacity": 55,
+          "price": 4800,
+          "available": true
+        },
+        "booking_id": "BK-001",
+        "saved": true
+      },
+      "tasks": [
+        {
+          "task_id": "G1",
+          "name": "Open Source",
+          "goal": "Validate and book Venue B",
+          "input": {
+            "operations": [
+              "open_source"
+            ]
+          },
+          "dependencies": [],
+          "success_criteria": "Operations completed with validated output",
+          "recovery_policy": "stop",
+          "assigned_executor": "venue_step",
+          "output": {
+            "source": [
+              {
+                "name": "Venue A",
+                "capacity": 60,
+                "price": 4500,
+                "available": true
+              },
+              {
+                "name": "Venue B",
+                "capacity": 55,
+                "price": 4800,
+                "available": true
+              },
+              {
+                "name": "Venue C",
+                "capacity": 40,
+                "price": 3000,
+                "available": true
+              }
+            ]
+          },
+          "status": "SUCCESS",
+          "attempts": 1,
+          "history": [
+            {
+              "from": "PENDING",
+              "to": "READY",
+              "attempt": 0,
+              "reason": "all dependencies SUCCESS"
+            },
+            {
+              "from": "READY",
+              "to": "RUNNING",
+              "attempt": 1,
+              "reason": "Attempt 1"
+            },
+            {
+              "from": "RUNNING",
+              "to": "SUCCESS",
+              "attempt": 1,
+              "reason": ""
+            }
+          ]
+        },
+        {
+          "task_id": "G2",
+          "name": "Query",
+          "goal": "Validate and book Venue B",
+          "input": {
+            "operations": [
+              "query"
+            ]
+          },
+          "dependencies": [
+            "G1"
+          ],
+          "success_criteria": "Operations completed with validated output",
+          "recovery_policy": "stop",
+          "assigned_executor": "venue_step",
+          "output": {
+            "matches": [
+              {
+                "name": "Venue B",
+                "capacity": 55,
+                "price": 4800,
+                "available": true
+              }
+            ]
+          },
+          "status": "SUCCESS",
+          "attempts": 1,
+          "history": [
+            {
+              "from": "PENDING",
+              "to": "BLOCKED",
+              "attempt": 0,
+              "reason": "waiting for dependencies"
+            },
+            {
+              "from": "BLOCKED",
+              "to": "READY",
+              "attempt": 0,
+              "reason": "all dependencies SUCCESS"
+            },
+            {
+              "from": "READY",
+              "to": "RUNNING",
+              "attempt": 1,
+              "reason": "Attempt 1"
+            },
+            {
+              "from": "RUNNING",
+              "to": "SUCCESS",
+              "attempt": 1,
+              "reason": ""
+            }
+          ]
+        },
+        {
+          "task_id": "G3",
+          "name": "Read Result",
+          "goal": "Validate and book Venue B",
+          "input": {
+            "operations": [
+              "read_result"
+            ]
+          },
+          "dependencies": [
+            "G2"
+          ],
+          "success_criteria": "Operations completed with validated output",
+          "recovery_policy": "stop",
+          "assigned_executor": "venue_step",
+          "output": {
+            "venue": {
+              "name": "Venue B",
+              "capacity": 55,
+              "price": 4800,
+              "available": true
+            }
+          },
+          "status": "SUCCESS",
+          "attempts": 1,
+          "history": [
+            {
+              "from": "PENDING",
+              "to": "BLOCKED",
+              "attempt": 0,
+              "reason": "waiting for dependencies"
+            },
+            {
+              "from": "BLOCKED",
+              "to": "READY",
+              "attempt": 0,
+              "reason": "all dependencies SUCCESS"
+            },
+            {
+              "from": "READY",
+              "to": "RUNNING",
+              "attempt": 1,
+              "reason": "Attempt 1"
+            },
+            {
+              "from": "RUNNING",
+              "to": "SUCCESS",
+              "attempt": 1,
+              "reason": ""
+            }
+          ]
+        },
+        {
+          "task_id": "G4",
+          "name": "Capacity",
+          "goal": "Validate and book Venue B",
+          "input": {
+            "operations": [
+              "capacity"
+            ]
+          },
+          "dependencies": [
+            "G3"
+          ],
+          "success_criteria": "Operations completed with validated output",
+          "recovery_policy": "stop",
+          "assigned_executor": "venue_step",
+          "output": {
+            "venue": {
+              "name": "Venue B",
+              "capacity": 55,
+              "price": 4800,
+              "available": true
+            }
+          },
+          "status": "SUCCESS",
+          "attempts": 1,
+          "history": [
+            {
+              "from": "PENDING",
+              "to": "BLOCKED",
+              "attempt": 0,
+              "reason": "waiting for dependencies"
+            },
+            {
+              "from": "BLOCKED",
+              "to": "READY",
+              "attempt": 0,
+              "reason": "all dependencies SUCCESS"
+            },
+            {
+              "from": "READY",
+              "to": "RUNNING",
+              "attempt": 1,
+              "reason": "Attempt 1"
+            },
+            {
+              "from": "RUNNING",
+              "to": "SUCCESS",
+              "attempt": 1,
+              "reason": ""
+            }
+          ]
+        },
+        {
+          "task_id": "G5",
+          "name": "Budget",
+          "goal": "Validate and book Venue B",
+          "input": {
+            "operations": [
+              "budget"
+            ]
+          },
+          "dependencies": [
+            "G4"
+          ],
+          "success_criteria": "Operations completed with validated output",
+          "recovery_policy": "stop",
+          "assigned_executor": "venue_step",
+          "output": {
+            "venue": {
+              "name": "Venue B",
+              "capacity": 55,
+              "price": 4800,
+              "available": true
+            }
+          },
+          "status": "SUCCESS",
+          "attempts": 1,
+          "history": [
+            {
+              "from": "PENDING",
+              "to": "BLOCKED",
+              "attempt": 0,
+              "reason": "waiting for dependencies"
+            },
+            {
+              "from": "BLOCKED",
+              "to": "READY",
+              "attempt": 0,
+              "reason": "all dependencies SUCCESS"
+            },
+            {
+              "from": "READY",
+              "to": "RUNNING",
+              "attempt": 1,
+              "reason": "Attempt 1"
+            },
+            {
+              "from": "RUNNING",
+              "to": "SUCCESS",
+              "attempt": 1,
+              "reason": ""
+            }
+          ]
+        },
+        {
+          "task_id": "G6",
+          "name": "Availability",
+          "goal": "Validate and book Venue B",
+          "input": {
+            "operations": [
+              "availability"
+            ]
+          },
+          "dependencies": [
+            "G5"
+          ],
+          "success_criteria": "Operations completed with validated output",
+          "recovery_policy": "stop",
+          "assigned_executor": "venue_step",
+          "output": {
+            "venue": {
+              "name": "Venue B",
+              "capacity": 55,
+              "price": 4800,
+              "available": true
+            }
+          },
+          "status": "SUCCESS",
+          "attempts": 1,
+          "history": [
+            {
+              "from": "PENDING",
+              "to": "BLOCKED",
+              "attempt": 0,
+              "reason": "waiting for dependencies"
+            },
+            {
+              "from": "BLOCKED",
+              "to": "READY",
+              "attempt": 0,
+              "reason": "all dependencies SUCCESS"
+            },
+            {
+              "from": "READY",
+              "to": "RUNNING",
+              "attempt": 1,
+              "reason": "Attempt 1"
+            },
+            {
+              "from": "RUNNING",
+              "to": "SUCCESS",
+              "attempt": 1,
+              "reason": ""
+            }
+          ]
+        },
+        {
+          "task_id": "G7",
+          "name": "Confirm",
+          "goal": "Validate and book Venue B",
+          "input": {
+            "operations": [
+              "confirm"
+            ]
+          },
+          "dependencies": [
+            "G6"
+          ],
+          "success_criteria": "Operations completed with validated output",
+          "recovery_policy": "stop",
+          "assigned_executor": "venue_step",
+          "output": {
+            "venue": {
+              "name": "Venue B",
+              "capacity": 55,
+              "price": 4800,
+              "available": true
+            },
+            "booking_id": "BK-001"
+          },
+          "status": "SUCCESS",
+          "attempts": 1,
+          "history": [
+            {
+              "from": "PENDING",
+              "to": "BLOCKED",
+              "attempt": 0,
+              "reason": "waiting for dependencies"
+            },
+            {
+              "from": "BLOCKED",
+              "to": "READY",
+              "attempt": 0,
+              "reason": "all dependencies SUCCESS"
+            },
+            {
+              "from": "READY",
+              "to": "RUNNING",
+              "attempt": 1,
+              "reason": "Attempt 1"
+            },
+            {
+              "from": "RUNNING",
+              "to": "SUCCESS",
+              "attempt": 1,
+              "reason": ""
+            }
+          ]
+        },
+        {
+          "task_id": "G8",
+          "name": "Save Result",
+          "goal": "Validate and book Venue B",
+          "input": {
+            "operations": [
+              "save_result"
+            ]
+          },
+          "dependencies": [
+            "G7"
+          ],
+          "success_criteria": "Operations completed with validated output",
+          "recovery_policy": "stop",
+          "assigned_executor": "venue_step",
+          "output": {
+            "venue": {
+              "name": "Venue B",
+              "capacity": 55,
+              "price": 4800,
+              "available": true
+            },
+            "booking_id": "BK-001",
+            "saved": true
+          },
+          "status": "SUCCESS",
+          "attempts": 1,
+          "history": [
+            {
+              "from": "PENDING",
+              "to": "BLOCKED",
+              "attempt": 0,
+              "reason": "waiting for dependencies"
+            },
+            {
+              "from": "BLOCKED",
+              "to": "READY",
+              "attempt": 0,
+              "reason": "all dependencies SUCCESS"
+            },
+            {
+              "from": "READY",
+              "to": "RUNNING",
+              "attempt": 1,
+              "reason": "Attempt 1"
+            },
+            {
+              "from": "RUNNING",
+              "to": "SUCCESS",
+              "attempt": 1,
+              "reason": ""
+            }
+          ]
+        }
+      ],
+      "events": [
+        {
+          "sequence": 1,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "G1",
+          "task_name": "Open Source",
+          "old_status": "PENDING",
+          "new_status": "READY",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "PENDING -> READY (all dependencies SUCCESS)"
+        },
+        {
+          "sequence": 2,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "G2",
+          "task_name": "Query",
+          "old_status": "PENDING",
+          "new_status": "BLOCKED",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "PENDING -> BLOCKED (waiting for dependencies)"
+        },
+        {
+          "sequence": 3,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "G3",
+          "task_name": "Read Result",
+          "old_status": "PENDING",
+          "new_status": "BLOCKED",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "PENDING -> BLOCKED (waiting for dependencies)"
+        },
+        {
+          "sequence": 4,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "G4",
+          "task_name": "Capacity",
+          "old_status": "PENDING",
+          "new_status": "BLOCKED",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "PENDING -> BLOCKED (waiting for dependencies)"
+        },
+        {
+          "sequence": 5,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "G5",
+          "task_name": "Budget",
+          "old_status": "PENDING",
+          "new_status": "BLOCKED",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "PENDING -> BLOCKED (waiting for dependencies)"
+        },
+        {
+          "sequence": 6,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "G6",
+          "task_name": "Availability",
+          "old_status": "PENDING",
+          "new_status": "BLOCKED",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "PENDING -> BLOCKED (waiting for dependencies)"
+        },
+        {
+          "sequence": 7,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "G7",
+          "task_name": "Confirm",
+          "old_status": "PENDING",
+          "new_status": "BLOCKED",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "PENDING -> BLOCKED (waiting for dependencies)"
+        },
+        {
+          "sequence": 8,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "G8",
+          "task_name": "Save Result",
+          "old_status": "PENDING",
+          "new_status": "BLOCKED",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "PENDING -> BLOCKED (waiting for dependencies)"
+        },
+        {
+          "sequence": 9,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "",
+          "task_name": null,
+          "old_status": null,
+          "new_status": null,
+          "executor": null,
+          "event": "SCHEDULER",
+          "tag": "SCHEDULER",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Ready wave: G1"
+        },
+        {
+          "sequence": 10,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "G1",
+          "task_name": "Open Source",
+          "old_status": "READY",
+          "new_status": "RUNNING",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "READY -> RUNNING (Attempt 1)"
+        },
+        {
+          "sequence": 11,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "G1",
+          "task_name": "Open Source",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "open_source"
+        },
+        {
+          "sequence": 12,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "G1",
+          "task_name": "Open Source",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "open_source complete"
+        },
+        {
+          "sequence": 13,
+          "timestamp": "2026-09-16T17:16:52.240+00:00",
+          "task_id": "G1",
+          "task_name": "Open Source",
+          "old_status": "RUNNING",
+          "new_status": "SUCCESS",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "RUNNING -> SUCCESS"
+        },
+        {
+          "sequence": 14,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G2",
+          "task_name": "Query",
+          "old_status": "BLOCKED",
+          "new_status": "READY",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "BLOCKED -> READY (all dependencies SUCCESS)"
+        },
+        {
+          "sequence": 15,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "",
+          "task_name": null,
+          "old_status": null,
+          "new_status": null,
+          "executor": null,
+          "event": "SCHEDULER",
+          "tag": "SCHEDULER",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Ready wave: G2"
+        },
+        {
+          "sequence": 16,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G2",
+          "task_name": "Query",
+          "old_status": "READY",
+          "new_status": "RUNNING",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "READY -> RUNNING (Attempt 1)"
+        },
+        {
+          "sequence": 17,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G2",
+          "task_name": "Query",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "query"
+        },
+        {
+          "sequence": 18,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G2",
+          "task_name": "Query",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "query complete"
+        },
+        {
+          "sequence": 19,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G2",
+          "task_name": "Query",
+          "old_status": "RUNNING",
+          "new_status": "SUCCESS",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "RUNNING -> SUCCESS"
+        },
+        {
+          "sequence": 20,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G3",
+          "task_name": "Read Result",
+          "old_status": "BLOCKED",
+          "new_status": "READY",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "BLOCKED -> READY (all dependencies SUCCESS)"
+        },
+        {
+          "sequence": 21,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "",
+          "task_name": null,
+          "old_status": null,
+          "new_status": null,
+          "executor": null,
+          "event": "SCHEDULER",
+          "tag": "SCHEDULER",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Ready wave: G3"
+        },
+        {
+          "sequence": 22,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G3",
+          "task_name": "Read Result",
+          "old_status": "READY",
+          "new_status": "RUNNING",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "READY -> RUNNING (Attempt 1)"
+        },
+        {
+          "sequence": 23,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G3",
+          "task_name": "Read Result",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "read_result"
+        },
+        {
+          "sequence": 24,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G3",
+          "task_name": "Read Result",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "read_result complete"
+        },
+        {
+          "sequence": 25,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G3",
+          "task_name": "Read Result",
+          "old_status": "RUNNING",
+          "new_status": "SUCCESS",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "RUNNING -> SUCCESS"
+        },
+        {
+          "sequence": 26,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G4",
+          "task_name": "Capacity",
+          "old_status": "BLOCKED",
+          "new_status": "READY",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "BLOCKED -> READY (all dependencies SUCCESS)"
+        },
+        {
+          "sequence": 27,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "",
+          "task_name": null,
+          "old_status": null,
+          "new_status": null,
+          "executor": null,
+          "event": "SCHEDULER",
+          "tag": "SCHEDULER",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Ready wave: G4"
+        },
+        {
+          "sequence": 28,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G4",
+          "task_name": "Capacity",
+          "old_status": "READY",
+          "new_status": "RUNNING",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "READY -> RUNNING (Attempt 1)"
+        },
+        {
+          "sequence": 29,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G4",
+          "task_name": "Capacity",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "capacity"
+        },
+        {
+          "sequence": 30,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G4",
+          "task_name": "Capacity",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "capacity complete"
+        },
+        {
+          "sequence": 31,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G4",
+          "task_name": "Capacity",
+          "old_status": "RUNNING",
+          "new_status": "SUCCESS",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "RUNNING -> SUCCESS"
+        },
+        {
+          "sequence": 32,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G5",
+          "task_name": "Budget",
+          "old_status": "BLOCKED",
+          "new_status": "READY",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "BLOCKED -> READY (all dependencies SUCCESS)"
+        },
+        {
+          "sequence": 33,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "",
+          "task_name": null,
+          "old_status": null,
+          "new_status": null,
+          "executor": null,
+          "event": "SCHEDULER",
+          "tag": "SCHEDULER",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Ready wave: G5"
+        },
+        {
+          "sequence": 34,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G5",
+          "task_name": "Budget",
+          "old_status": "READY",
+          "new_status": "RUNNING",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "READY -> RUNNING (Attempt 1)"
+        },
+        {
+          "sequence": 35,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G5",
+          "task_name": "Budget",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "budget"
+        },
+        {
+          "sequence": 36,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G5",
+          "task_name": "Budget",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "budget complete"
+        },
+        {
+          "sequence": 37,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G5",
+          "task_name": "Budget",
+          "old_status": "RUNNING",
+          "new_status": "SUCCESS",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "RUNNING -> SUCCESS"
+        },
+        {
+          "sequence": 38,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G6",
+          "task_name": "Availability",
+          "old_status": "BLOCKED",
+          "new_status": "READY",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "BLOCKED -> READY (all dependencies SUCCESS)"
+        },
+        {
+          "sequence": 39,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "",
+          "task_name": null,
+          "old_status": null,
+          "new_status": null,
+          "executor": null,
+          "event": "SCHEDULER",
+          "tag": "SCHEDULER",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Ready wave: G6"
+        },
+        {
+          "sequence": 40,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G6",
+          "task_name": "Availability",
+          "old_status": "READY",
+          "new_status": "RUNNING",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "READY -> RUNNING (Attempt 1)"
+        },
+        {
+          "sequence": 41,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G6",
+          "task_name": "Availability",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "availability"
+        },
+        {
+          "sequence": 42,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G6",
+          "task_name": "Availability",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "availability complete"
+        },
+        {
+          "sequence": 43,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G6",
+          "task_name": "Availability",
+          "old_status": "RUNNING",
+          "new_status": "SUCCESS",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "RUNNING -> SUCCESS"
+        },
+        {
+          "sequence": 44,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G7",
+          "task_name": "Confirm",
+          "old_status": "BLOCKED",
+          "new_status": "READY",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "BLOCKED -> READY (all dependencies SUCCESS)"
+        },
+        {
+          "sequence": 45,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "",
+          "task_name": null,
+          "old_status": null,
+          "new_status": null,
+          "executor": null,
+          "event": "SCHEDULER",
+          "tag": "SCHEDULER",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Ready wave: G7"
+        },
+        {
+          "sequence": 46,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G7",
+          "task_name": "Confirm",
+          "old_status": "READY",
+          "new_status": "RUNNING",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "READY -> RUNNING (Attempt 1)"
+        },
+        {
+          "sequence": 47,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G7",
+          "task_name": "Confirm",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "confirm"
+        },
+        {
+          "sequence": 48,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G7",
+          "task_name": "Confirm",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "BOOKING",
+          "tag": "BOOKING",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Created BK-001 for Venue B"
+        },
+        {
+          "sequence": 49,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G7",
+          "task_name": "Confirm",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "confirm complete"
+        },
+        {
+          "sequence": 50,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G7",
+          "task_name": "Confirm",
+          "old_status": "RUNNING",
+          "new_status": "SUCCESS",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "RUNNING -> SUCCESS"
+        },
+        {
+          "sequence": 51,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G8",
+          "task_name": "Save Result",
+          "old_status": "BLOCKED",
+          "new_status": "READY",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "BLOCKED -> READY (all dependencies SUCCESS)"
+        },
+        {
+          "sequence": 52,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "",
+          "task_name": null,
+          "old_status": null,
+          "new_status": null,
+          "executor": null,
+          "event": "SCHEDULER",
+          "tag": "SCHEDULER",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "Ready wave: G8"
+        },
+        {
+          "sequence": 53,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G8",
+          "task_name": "Save Result",
+          "old_status": "READY",
+          "new_status": "RUNNING",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "READY -> RUNNING (Attempt 1)"
+        },
+        {
+          "sequence": 54,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G8",
+          "task_name": "Save Result",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "ACT",
+          "tag": "ACT",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "save_result"
+        },
+        {
+          "sequence": 55,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G8",
+          "task_name": "Save Result",
+          "old_status": null,
+          "new_status": null,
+          "executor": "venue_step",
+          "event": "OBSERVE",
+          "tag": "OBSERVE",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "save_result complete"
+        },
+        {
+          "sequence": 56,
+          "timestamp": "2026-09-16T17:16:52.241+00:00",
+          "task_id": "G8",
+          "task_name": "Save Result",
+          "old_status": "RUNNING",
+          "new_status": "SUCCESS",
+          "executor": "venue_step",
+          "event": "STATUS",
+          "tag": "STATUS",
+          "failure_type": null,
+          "recovery_action": null,
+          "message": "RUNNING -> SUCCESS"
+        }
+      ]
+    }
+  }
+}

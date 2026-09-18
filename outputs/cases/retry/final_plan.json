@@ -1,0 +1,78 @@
+{
+  "title": "AI Agent Seminar",
+  "date": "2026-11-20",
+  "attendees": 50,
+  "venue": {
+    "name": "Venue A",
+    "capacity": 60,
+    "price": 4500,
+    "available": true
+  },
+  "booking": {
+    "booking_id": "BK-001",
+    "venue": "Venue A",
+    "date": "2026-11-20",
+    "capacity": 60,
+    "price": 4500,
+    "status": "active"
+  },
+  "agenda": [
+    {
+      "start": "09:00",
+      "end": "10:30",
+      "topic": "Agent Foundations"
+    },
+    {
+      "start": "10:30",
+      "end": "12:00",
+      "topic": "Task Decomposition and Planning"
+    },
+    {
+      "start": "12:00",
+      "end": "13:00",
+      "topic": "Lunch"
+    },
+    {
+      "start": "13:00",
+      "end": "15:00",
+      "topic": "Multi-Agent Workshop"
+    },
+    {
+      "start": "15:00",
+      "end": "17:00",
+      "topic": "Failure Recovery Lab"
+    }
+  ],
+  "speakers": [
+    {
+      "name": "Dr. Lin (mock)",
+      "topics": [
+        "Agent Foundations",
+        "Task Decomposition and Planning"
+      ]
+    },
+    {
+      "name": "Dr. Chen (mock)",
+      "topics": [
+        "Multi-Agent Workshop",
+        "Failure Recovery Lab"
+      ]
+    }
+  ],
+  "invitation": {
+    "date": "2026-11-20",
+    "venue": "Venue A",
+    "status": "draft_only",
+    "text": "Join our AI Agent Seminar on 2026-11-20, 09:00-17:00 at Venue A. For 50 students. Speakers: Dr. Lin (mock), Dr. Chen (mock). Agenda: Agent Foundations; Task Decomposition and Planning; Lunch; Multi-Agent Workshop; Failure Recovery Lab"
+  },
+  "budget": {
+    "limit": 8000,
+    "venue": 4500,
+    "speakers": 1500,
+    "catering": 1000,
+    "total": 7000,
+    "remaining": 1000
+  },
+  "mock_mode": true,
+  "planner_mode": "mock"
+}

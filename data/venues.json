@@ -1,0 +1,5 @@
+[
+  {"name": "Venue A", "capacity": 60, "price": 4500, "available": false},
+  {"name": "Venue B", "capacity": 55, "price": 4800, "available": true},
+  {"name": "Venue C", "capacity": 40, "price": 3000, "available": true}
+]
