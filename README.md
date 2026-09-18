@@ -1,5 +1,7 @@
 # Task 04 — Task Decomposition and Planning
 
+第一次阅读代码的同学，请先看 [STUDENT_LEARNING_GUIDE.md](STUDENT_LEARNING_GUIDE.md)。它提供按 T2 Venue Planning 追踪代码的阅读顺序、三个核心学习点、故障模式对比和课后练习。
+
 ## Project Overview
 
 为 **50 名学生组织一天的 AI Agent Seminar**，演示 Goal → Planning → Task Decomposition → DAG → Execution → Observation → Recovery → Final Result。适用于 20 分钟大学 Seminar，核心只用 Python 标准库。
@@ -263,6 +265,7 @@ multi_agent_task_demo/
   run_demo.cmd                  优先使用工作区 Python 3.11 的 Windows 入口
   requirements.txt              纯标准库，无第三方依赖
   README.md                     概念映射、架构、运行与验证说明
+  STUDENT_LEARNING_GUIDE.md     面向同学的代码阅读路径与练习
   PRESENTATION_GUIDE.md         20 分钟课堂流程与讲者提示
   .gitignore                    排除 Python 缓存、虚拟环境和 .env
   models/
